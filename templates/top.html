@@ -1,0 +1,83 @@
+{% extends "base1.html" %}
+
+{% block content %}
+<main style="display: flex; flex-direction: column; align-items: center;">
+    <h1>AIで試合スコアを予測しよう！</h1>
+    <form action="{{ url_for('vote') }}" method="POST" style="text-align: center;">
+        <div style="display: flex; justify-content: center; gap: 50px; align-items: center;">
+            <div>
+                <label for="team_name1" style="margin-top: 20px; font-size: 20px;">チーム1:</label>
+                <select id="team_name1" name="team_name1" style="font-size: 18px; padding: 5px;">
+                    <option value="" selected disabled>球団を選択する</option>
+                    <option value="阪神タイガース">阪神タイガース</option>
+                    <option value="広島東洋カープ">広島東洋カープ</option>
+                    <option value="横浜DeNAベイスターズ">横浜DeNAベイスターズ</option>
+                    <option value="読売ジャイアンツ">読売ジャイアンツ</option>
+                    <option value="東京ヤクルトスワローズ">東京ヤクルトスワローズ</option>
+                    <option value="中日ドラゴンズ">中日ドラゴンズ</option>
+                </select>
+            </div>
+            <h2 style="font-size: 38px;">VS</h2>
+            <div>
+                <label for="team_name2" style="margin-top: 20px; font-size: 20px;">チーム2:</label>
+                <select id="team_name2" name="team_name2" style="font-size: 18px; padding: 5px;">
+                    <option value="" selected disabled>球団を選択する</option>
+                    <option value="阪神タイガース">阪神タイガース</option>
+                    <option value="広島東洋カープ">広島東洋カープ</option>
+                    <option value="横浜DeNAベイスターズ">横浜DeNAベイスターズ</option>
+                    <option value="読売ジャイアンツ">読売ジャイアンツ</option>
+                    <option value="東京ヤクルトスワローズ">東京ヤクルトスワローズ</option>
+                    <option value="中日ドラゴンズ">中日ドラゴンズ</option>
+                </select>
+            </div>
+        </div>
+
+        <br />
+        <!-- 楕円形のボタン -->
+        <button type="submit" class="predict-button">予測する！</button>
+    </form>
+
+    <!-- 直近の試合日程リンク -->
+    <div style="margin-top: 20px;">
+        <a href="https://npb.jp/cl/" target="_blank" style="font-size: 16px; ">
+            直近の試合日程はこちら
+        </a>
+    </div>
+</main>
+
+<!-- CSSスタイルでホバー時に下線を表示し、色を変更 -->
+
+<style>
+    .predict-button {
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 20px;
+        background-color: #ffc400; /* オレンジ色 */
+        color: white;
+        border: none;
+        border-radius: 25px; /* 丸みを追加 */
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ボタンに影をつけて立体感を出す */
+    }
+
+    .predict-button:hover {
+        background-color: #ffc400; /* ホバー時に色を少し暗く */
+        transform: scale(1.05); /* ホバー時に少し大きくする */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影を強く */
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: red;
+        /* カーソルを合わせたときに色を赤に変更 */
+    }
+</style>
+
+
+{% endblock %}

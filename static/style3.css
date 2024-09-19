@@ -1,0 +1,26 @@
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.team {
+    text-align: center;
+}
+
+.score {
+    font-size: 48px;
+    /* スコアを大きく表示 */
+    color: #333;
+    /* 色の調整 */
+    display: block;
+    /* 改行して表示 */
+    margin-top: 10px;
+}
+
+.result {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+}

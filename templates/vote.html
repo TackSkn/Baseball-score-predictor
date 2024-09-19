@@ -1,0 +1,25 @@
+{% extends "base1.html" %}
+{% block content %}
+<main>
+    <h1>スコア予測結果</h1>
+    <div class="team-container">
+        <div class="team">
+            チーム1: {{ team1 }}
+            <br />
+            <strong class="score">{{ team_score1 }}</strong>
+        </div>
+        <div class="team">
+            チーム2: {{ team2 }}
+            <br />
+            <strong class="score">{{ team_score2 }}</strong>
+        </div>
+    </div>
+
+    <div class="result">
+        <h2>
+            {% if team_score1 > team_score2 %}
+            {{ team1 }}が勝つと予想します！
+            {% elif team_score1 < team_score2 %} {{ team2 }}が勝つと予想します！ {% else %} 引き分けになると予想します！ {% endif %} </h2>
+    </div>
+</main>
+{% endblock %}

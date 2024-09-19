@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>セ・リーグAI予想</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="/">セ・リーグAI予想</a>
+        </div>
+    </header>
+
+    <!-- 球団ロゴを並べる部分 -->
+    <div class="team-logos">
+        <img src="{{ url_for('static', filename='images/yakult_logo.png') }}" alt="東京ヤクルトスワローズ" class="team-logo">
+        <img src="{{ url_for('static', filename='images/yokohama_logo.png') }}" alt="横浜DeNAベイスターズ" class="team-logo">
+        <img src="{{ url_for('static', filename='images/yomiuri_logo.png') }}" alt="読売ジャイアンツ" class="team-logo">
+        <img src="{{ url_for('static', filename='images/hanshin_logo.png') }}" alt="阪神タイガース" class="team-logo">
+        <img src="{{ url_for('static', filename='images/chunichi_logo.png') }}" alt="中日ドラゴンズ" class="team-logo">
+        <img src="{{ url_for('static', filename='images/hiroshima_logo.png') }}" alt="広島東洋カープ" class="team-logo">
+    </div>
+
+    <!-- メインコンテンツ -->
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+        <div>セ・リーグAI予想</div>
+    </footer>
+</body>
+
+</html>
